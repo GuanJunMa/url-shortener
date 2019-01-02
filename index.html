@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+  <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+    var Logo = React.createClass({
+      render: function() {
+        return (
+          <div className="logoCon">
+            <img className="logo" src="./tumblr.png" />
+          </div>
+        );
+      }
+    });
+
+      var Container = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <Logo />
+              <div className="item-con">
+                <div className="item-title">网址缩短</div>
+                <input className="input-url" />
+                <TabBar name="GO" />
+                <div className="input-res">原网址：</div>
+                <div className="input-res">短网址：</div>
+              </div>
+              <div className="item-con">
+                <div className="item-title">网址还原</div>
+                <input className="input-url" />
+                <TabBar name="GO" />
+                <div className="input-res">原网址：</div>
+                <div className="input-res">长网址：</div>
+              </div>
+            </div>
+          );
+        }
+      });
+
+    var TabBar = React.createClass({
+      render: function() {
+        return (
+          <button className="tabBar">
+            {this.props.name}
+          </button>
+        );
+      }
+    });
+
+
+    ReactDOM.render(
+      <Container />,
+      document.getElementById('root')
+    );
+
+  </script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .input-url {
+      width: 550px;
+      height: 40px;
+      font-size: 18px;
+      padding-left: 30px;
+    }
+
+    .item-con {
+      height: 200px;
+      width: 100%;
+      background: #fafafa;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .item-title {
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: rgb(41, 53, 73);
+      color: #f1f1f1;
+    }
+
+    .input-res {
+      width: 670px;
+      margin: 0 auto;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .logoCon {
+      width: 100%;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .logo {
+      width: 230px;
+      height: 54px;
+    }
+
+    .tabBar {
+      width: 90px;
+      height: 40px;
+      line-height: 40px;
+      background: #fafafa;
+      text-align: center;
+      border: 1px solid #e8e8e8;
+      font-size: 14px;
+    }
+  </style>
+</body>
+
+</html>
